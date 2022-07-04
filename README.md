@@ -1,5 +1,5 @@
 # EchoProject
-Solana Bootcamp Echo Project
+Solana Bootcamp Echo Project - Chicago HackerHouse by Jarry Xiao
 
 ## Instruction 0: Echo
 Contents of the passed in data vector should be copied into the echo_buffer account
