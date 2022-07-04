@@ -1,0 +1,11 @@
+/Users/fabioibanez/Desktop/EchoProject/target/bpfel-unknown-unknown/release/deps/serde_bytes-3418ef1184e40865.rmeta: /Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_bytes-0.11.6/src/lib.rs /Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_bytes-0.11.6/src/bytes.rs /Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_bytes-0.11.6/src/de.rs /Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_bytes-0.11.6/src/ser.rs /Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_bytes-0.11.6/src/bytebuf.rs
+
+/Users/fabioibanez/Desktop/EchoProject/target/bpfel-unknown-unknown/release/deps/libserde_bytes-3418ef1184e40865.rlib: /Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_bytes-0.11.6/src/lib.rs /Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_bytes-0.11.6/src/bytes.rs /Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_bytes-0.11.6/src/de.rs /Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_bytes-0.11.6/src/ser.rs /Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_bytes-0.11.6/src/bytebuf.rs
+
+/Users/fabioibanez/Desktop/EchoProject/target/bpfel-unknown-unknown/release/deps/serde_bytes-3418ef1184e40865.d: /Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_bytes-0.11.6/src/lib.rs /Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_bytes-0.11.6/src/bytes.rs /Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_bytes-0.11.6/src/de.rs /Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_bytes-0.11.6/src/ser.rs /Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_bytes-0.11.6/src/bytebuf.rs
+
+/Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_bytes-0.11.6/src/lib.rs:
+/Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_bytes-0.11.6/src/bytes.rs:
+/Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_bytes-0.11.6/src/de.rs:
+/Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_bytes-0.11.6/src/ser.rs:
+/Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/serde_bytes-0.11.6/src/bytebuf.rs:

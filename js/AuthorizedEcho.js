@@ -68,21 +68,6 @@ const main = async () => {
         data: Buffer.concat([init_idx, buffer_seed, buffer_size]),
     })
 
-    let tx1 = new Transaction();
-    tx1.add(initializeAuthEchoIx)
-    let txid1 = await sendAndConfirmTransaction(
-        connection,
-        tx1,
-        [authority],
-        {
-            skipPreflight: true,
-            preflightCommitment: "confirmed",
-            confirmation: "confirmed",
-        }
-    );
-    console.log(`https://explorer.solana.com/tx/${txid1}?cluster=devnet`);
-    console.log("success in initializing the authorized_echo")
-
     let writeAuthBufferIx = new TransactionInstruction({
         keys: [
             {
@@ -101,7 +86,7 @@ const main = async () => {
     })
 
     let tx2 = new Transaction();
-    tx2.add(writeAuthBufferIx);
+    tx2.add(initializeAuthEchoIx).add(writeAuthBufferIx);
 
     let txid2 = await sendAndConfirmTransaction(
         connection,

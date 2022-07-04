@@ -1,0 +1,10 @@
+/Users/fabioibanez/Desktop/EchoProject/target/bpfel-unknown-unknown/release/deps/solana_frozen_abi-493c83af43058d49.rmeta: /Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/solana-frozen-abi-1.9.1/src/lib.rs /Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/solana-frozen-abi-1.9.1/src/abi_digester.rs /Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/solana-frozen-abi-1.9.1/src/abi_example.rs /Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/solana-frozen-abi-1.9.1/src/hash.rs
+
+/Users/fabioibanez/Desktop/EchoProject/target/bpfel-unknown-unknown/release/deps/libsolana_frozen_abi-493c83af43058d49.rlib: /Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/solana-frozen-abi-1.9.1/src/lib.rs /Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/solana-frozen-abi-1.9.1/src/abi_digester.rs /Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/solana-frozen-abi-1.9.1/src/abi_example.rs /Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/solana-frozen-abi-1.9.1/src/hash.rs
+
+/Users/fabioibanez/Desktop/EchoProject/target/bpfel-unknown-unknown/release/deps/solana_frozen_abi-493c83af43058d49.d: /Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/solana-frozen-abi-1.9.1/src/lib.rs /Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/solana-frozen-abi-1.9.1/src/abi_digester.rs /Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/solana-frozen-abi-1.9.1/src/abi_example.rs /Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/solana-frozen-abi-1.9.1/src/hash.rs
+
+/Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/solana-frozen-abi-1.9.1/src/lib.rs:
+/Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/solana-frozen-abi-1.9.1/src/abi_digester.rs:
+/Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/solana-frozen-abi-1.9.1/src/abi_example.rs:
+/Users/fabioibanez/.cargo/registry/src/github.com-1ecc6299db9ec823/solana-frozen-abi-1.9.1/src/hash.rs:
