@@ -83,7 +83,7 @@ const main = async () => {
 
   console.log(`https://explorer.solana.com/tx/${txid}?cluster=devnet`);
   data = (await connection.getAccountInfo(authorized_buffer)).data;
-  console.log("Authorized Buffer Data:", data);
+  console.log("Authorized Buffer Data:", data.toString().slice(2));
 };
 // calling main
 

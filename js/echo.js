@@ -13,7 +13,7 @@ const BN = require("bn.js");
 const main = async () => {
   var args = process.argv.slice(2);
   const programId = new PublicKey(args[0]);
-  const echo = "any message";
+  const echo = "Hey Jarry";
 
   const connection = new Connection("https://api.devnet.solana.com/");
 
