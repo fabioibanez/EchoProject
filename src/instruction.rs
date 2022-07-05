@@ -47,8 +47,7 @@ pub enum EchoInstruction {
     /// | 0     | ✅       | ❌     | authorized_buffer: PDA of Echo Program that only `authority` can write to |
     /// | 1     | ❌       | ✅     | authority: Pubkey with sole write access to `authorized_buffer`           |
     AuthorizedEcho { 
-        data: Vec<u8>,
-        buffer_seed: u64
+        data: Vec<u8>
     },
     /// This instruction will allocate `buffer_size` bytes to the `vending_machine_buffer` account and assign it the Echo Program.
     ///

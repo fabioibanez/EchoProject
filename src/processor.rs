@@ -43,10 +43,7 @@ impl Processor {
                 msg!("Inside the Echo function");
                 let accounts_iter = &mut accounts.iter();
                 let &mut echo_buffer = &mut next_account_info(accounts_iter)?; // passing in the keypair pubkey
-                msg!(&format!("{:?}", &data));
-
-                // todo : check that there is no data
-
+                
                 // immutable reference
                 let echo_data_size = echo_buffer.data_len();
 
@@ -63,8 +60,6 @@ impl Processor {
                 let authority = &mut next_account_info(accounts_iter)?;
                 let authorized_buffer = &mut next_account_info(accounts_iter)?;
 
-                // find the PDA
-                msg!(&format!("{}", buffer_seed));
                 let (authorized_buffer_key, bump_seed) = Pubkey::find_program_address(
                     &[
                         b"authority",
@@ -109,60 +104,53 @@ impl Processor {
                 msg!("Data is copied into first 9 bytes.");
             }
 
-            EchoInstruction::AuthorizedEcho { data, buffer_seed } => {
+            EchoInstruction::AuthorizedEcho { data } => {
                 let accounts_iter = &mut accounts.iter();
                 let authority = &mut next_account_info(accounts_iter)?;
                 let authorized_buffer = &mut next_account_info(accounts_iter)?;
-                // what is the objective here? : copy data vector into the authorized_buffer account
+
+                let mut authorized_buffer_data_mut = authorized_buffer.try_borrow_mut_data()?;
 
                 // deterministically find the PDA
                 let (authorized_buffer_key, bump_seed) = Pubkey::find_program_address(
                     &[
                         b"authority",
                         authority.key.as_ref(),
-                        &buffer_seed.to_le_bytes(),
+                        &authorized_buffer_data_mut[1..9],
                     ],
                     program_id,
                 );
-
-                /*
-                make sure that PDA pubkey, which was derived using a seed which includes the authority key, matches
-                the authorized_buffer.key --> this required me to pass in the buffer seed!
-                 */
 
                 if authorized_buffer_key != *authorized_buffer.key {
                     msg!("The PDA account pubkey does not match the key of the account that was passsed in");
                     return Err(EchoError::IncorrectAuthority.into());
                 };
+                msg!("The PDA account key matches the authorized_buffer key!");
 
-                // immutable reference
-                if authorized_buffer.data_len() > data.len() {
+                // case 1: buffer size is larger than the data
+                if authorized_buffer_data_mut[9..].len() > data.len() {
                     let copy_limit = data.len();
 
-                    //mutable reference
-                    let mut data_f = authorized_buffer.try_borrow_mut_data()?;
-
                     // zero out all of the data aside from the first 9 bytes
-                    for elem in &mut data_f[9..] {
+                    for elem in &mut authorized_buffer_data_mut[9..] {
                         *elem = 0;
                     }
 
-                    // start at index 9 and copy the data.
-                    data_f[9..].clone_from_slice(&data[..copy_limit]);
+                    // start at index 9 and copy the data. The src and the dst have to match in size!
+                    authorized_buffer_data_mut[9..(9 + copy_limit)].clone_from_slice(&data);
                     msg!("You did it!");
-                } else {
-                    let copy_limit = authorized_buffer.data_len();
 
-                    //mutable reference
-                    let mut data_f = authorized_buffer.try_borrow_mut_data()?;
+                // case 2: data is larger than the buffer size
+                } else {
+                    let copy_limit = authorized_buffer_data_mut[9..].len();
 
                     // zero out all of the data aside from the first 9 bytes
-                    for elem in &mut data_f[9..] {
+                    for elem in &mut authorized_buffer_data_mut[9..] {
                         *elem = 0;
                     }
 
                     // start at index 9 and copy the data.
-                    data_f[9..].clone_from_slice(&data[..copy_limit]);
+                    authorized_buffer_data_mut[9..].clone_from_slice(&data[..copy_limit]);
                     msg!("You did it!");
                 }
             }

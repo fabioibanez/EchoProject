@@ -20,10 +20,11 @@ const main = async () => {
 
     var args = process.argv.slice(2);
     const programId = new PublicKey(args[0]);
-    const authorized_echo = "any message"
+    const authorized_echo = "Hi Jarry, this was pretty fun."
 
     const buffer_seed = new BN(50).toBuffer('le', 8);
-    const buffer_size = new BN(20).toBuffer('le', 8);
+    // allocate the size of the buffer_account here
+    const buffer_size = new BN(50).toBuffer('le', 8);
 
     // these are our two accounts
     const authority = Keypair.generate();
@@ -82,7 +83,7 @@ const main = async () => {
             },
         ],
         programId: programId,
-        data: Buffer.concat([write_idx, messageLen, message, buffer_seed])
+        data: Buffer.concat([write_idx, messageLen, message])
     })
 
     let tx2 = new Transaction();
@@ -101,7 +102,7 @@ const main = async () => {
     
     console.log(`https://explorer.solana.com/tx/${txid2}?cluster=devnet`);
     data = (await connection.getAccountInfo(authorized_buffer)).data;
-    console.log("Authorized Buffer Data:", data.toString());
+    console.log("Authorized Buffer Data:", data.toString().slice(2));
 }
 main()
     .then(() => {
